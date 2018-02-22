@@ -17,11 +17,11 @@ stringtoolbox is available as single-file, header-only library - just drop [stri
 ## Features
 * Written in highly portable and high quality C++11
 * **Available as header-only, single-file distribution - just drop [stringtoolbox.hpp](https://raw.githubusercontent.com/chrberger/stringtoolbox/master/stringtoolbox.hpp) into your project, `#include "stringtoolbox.hpp"`, and compile your project with a modern C++ compiler (C++11 or newer)**
-* Remove leading whitespace characters: `std::string retVal = stringtoolbox::ltrim(myString);`
-* Remove trailing whitespace characters: `std::string retVal = stringtoolbox::rtrim(myString);`
-* Remove leading and trailing whitespace characters: `std::string retVal = stringtoolbox::trim(myString);`
-* Replace all occurrences of given character: `std::string retVal = stringtoolbox::replaceAll(myString, 'X', 'Y');`
-* Split a string using the given delimiter: `std::vector<std::string> retVal = split(myString, ',');`
+* Remove leading whitespace characters: `std::string retVal = stringtoolbox::ltrim("   Hello World!");`
+* Remove trailing whitespace characters: `std::string retVal = stringtoolbox::rtrim("Hello World!    ");`
+* Remove leading and trailing whitespace characters: `std::string retVal = stringtoolbox::trim("   Hello World!    ");`
+* Replace all occurrences of given character: `std::string retVal = stringtoolbox::replaceAll("Hello World.", '.', '!');`
+* Split a string using the given delimiter: `std::vector<std::string> retVal = split("Hello,World", ',');`
 
 
 ## Dependencies
