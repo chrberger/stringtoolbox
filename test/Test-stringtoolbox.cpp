@@ -99,3 +99,35 @@ TEST_CASE("Test replace all") {
     REQUIRE("_A_BC_" == stringtoolbox::replaceAll(" A BC ", ' ', '_'));
     REQUIRE("_A_B__C__" == stringtoolbox::replaceAll(" A B  C  ", ' ', '_'));
 }
+
+TEST_CASE("Test split") {
+    std::string s1 = "abc";
+    std::vector<std::string> vs1 = stringtoolbox::split(s1, ',');
+    REQUIRE(vs1.size() == 0);
+
+    std::string s2 = "abc;def";
+    std::vector<std::string> vs2_no = stringtoolbox::split(s2, ',');
+    REQUIRE(vs2_no.size() == 0);
+    std::vector<std::string> vs2 = stringtoolbox::split(s2, ';');
+    REQUIRE(vs2.size() == 2);
+    REQUIRE(vs2.at(0) == "abc");
+    REQUIRE(vs2.at(1) == "def");
+
+    std::string s3 = ";abc;def";
+    std::vector<std::string> vs3 = stringtoolbox::split(s3, ';');
+    REQUIRE(vs3.size() == 2);
+    REQUIRE(vs3.at(0) == "abc");
+    REQUIRE(vs3.at(1) == "def");
+
+    std::string s4 = "abc;def;";
+    std::vector<std::string> vs4 = stringtoolbox::split(s4, ';');
+    REQUIRE(vs4.size() == 2);
+    REQUIRE(vs4.at(0) == "abc");
+    REQUIRE(vs4.at(1) == "def");
+
+    std::string s5 = ";abc;def;";
+    std::vector<std::string> vs5 = stringtoolbox::split(s5, ';');
+    REQUIRE(vs5.size() == 2);
+    REQUIRE(vs5.at(0) == "abc");
+    REQUIRE(vs5.at(1) == "def");
+}
