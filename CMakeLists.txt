@@ -37,7 +37,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
     -Werror \
     -Weffc++ \
     -Wall -Wextra -Wshadow -Wdeprecated \
-    -Wdiv-by-zero -Wfloat-equal -Wfloat-conversion -Wsign-compare -Wpointer-arith \
+    -Wdiv-by-zero -Wfloat-equal -Wsign-compare -Wpointer-arith \
     -Wuninitialized -Wunreachable-code \
     -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-but-set-parameter -Wunused-but-set-variable \
     -Wunused-value -Wunused-variable -Wunused-result \
