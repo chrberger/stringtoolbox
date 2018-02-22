@@ -20,6 +20,7 @@ stringtoolbox is available as single-file, header-only library - just drop [stri
 * Remove leading whitespace characters: `std::string& stringtoolbox::ltrim(std::string &str)`
 * Remove trailing whitespace characters: `std::string& stringtoolbox::rtrim(std::string &str)`
 * Remove leading and trailing whitespace characters: `std::string& stringtoolbox::trim(std::string &str)`
+* Replace all occurrences of character FROM with TO: `std::string& stringtoolbox::replaceAll(const std::string &str, const char &FROM, const char &TO)`
 
 
 ## Dependencies

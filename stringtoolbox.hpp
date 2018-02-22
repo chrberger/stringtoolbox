@@ -25,6 +25,7 @@
 #ifndef STRINGTOOLBOX_HPP
 #define STRINGTOOLBOX_HPP
 
+#include <algorithm>
 #include <string>
 
 namespace stringtoolbox {
@@ -51,6 +52,16 @@ inline std::string &ltrim(std::string &str) {
 inline std::string &trim(std::string &str) {
     return ltrim(rtrim(str));
 }
+
+/**
+ * @return std:string where all occurrences of characters FROM are replaced with TO.
+ */
+inline std::string replaceAll(const std::string &str, const char &FROM, const char &TO) {
+    std::string retVal{str};
+    std::replace(retVal.begin(), retVal.end(), FROM, TO);
+    return retVal;
+}
+
 } // namespace stringtoolbox
 
 #endif

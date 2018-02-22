@@ -92,3 +92,10 @@ TEST_CASE("Test trim.") {
     REQUIRE(4 == stringtoolbox::trim(test8t).size());
     REQUIRE(4 == stringtoolbox::trim(test9t).size());
 }
+
+TEST_CASE("Test replace all") {
+    REQUIRE("_ABC" == stringtoolbox::replaceAll(" ABC", ' ', '_'));
+    REQUIRE("_ABC_" == stringtoolbox::replaceAll(" ABC ", ' ', '_'));
+    REQUIRE("_A_BC_" == stringtoolbox::replaceAll(" A BC ", ' ', '_'));
+    REQUIRE("_A_B__C__" == stringtoolbox::replaceAll(" A B  C  ", ' ', '_'));
+}
