@@ -26,22 +26,24 @@ project(stringtoolbox)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
-    -D_XOPEN_SOURCE=700 \
-    -D_FORTIFY_SOURCE=2 \
-    -O2 \
-    -fstack-protector \
-    -fomit-frame-pointer \
-    -pipe \
-    -pedantic -pedantic-errors \
-    -Werror \
-    -Weffc++ \
-    -Wall -Wextra -Wshadow -Wdeprecated \
-    -Wdiv-by-zero -Wfloat-equal -Wsign-compare -Wpointer-arith \
-    -Wuninitialized -Wunreachable-code \
-    -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-but-set-parameter -Wunused-but-set-variable \
-    -Wunused-value -Wunused-variable -Wunused-result \
-    -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-include-dirs -Wmissing-noreturn")
+if(NOT WIN32)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
+        -D_XOPEN_SOURCE=700 \
+        -D_FORTIFY_SOURCE=2 \
+        -O2 \
+        -fstack-protector \
+        -fomit-frame-pointer \
+        -pipe \
+        -pedantic -pedantic-errors \
+        -Werror \
+        -Weffc++ \
+        -Wall -Wextra -Wshadow -Wdeprecated \
+        -Wdiv-by-zero -Wfloat-equal -Wsign-compare -Wpointer-arith \
+        -Wuninitialized -Wunreachable-code \
+        -Wunused -Wunused-function -Wunused-label -Wunused-parameter -Wunused-but-set-parameter -Wunused-but-set-variable \
+        -Wunused-value -Wunused-variable -Wunused-result \
+        -Wmissing-field-initializers -Wmissing-format-attribute -Wmissing-include-dirs -Wmissing-noreturn")
+endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
