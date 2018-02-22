@@ -17,11 +17,11 @@ stringtoolbox is available as single-file, header-only library - just drop [stri
 ## Features
 * Written in highly portable and high quality C++11
 * **Available as header-only, single-file distribution - just drop [stringtoolbox.hpp](https://raw.githubusercontent.com/chrberger/stringtoolbox/master/stringtoolbox.hpp) into your project, `#include "stringtoolbox.hpp"`, and compile your project with a modern C++ compiler (C++11 or newer)**
-* Remove leading whitespace characters: `std::string& stringtoolbox::ltrim(std::string &str)`
-* Remove trailing whitespace characters: `std::string& stringtoolbox::rtrim(std::string &str)`
-* Remove leading and trailing whitespace characters: `std::string& stringtoolbox::trim(std::string &str)`
-* Replace all occurrences of character FROM with TO: `std::string& stringtoolbox::replaceAll(const std::string &str, const char &FROM, const char &TO)`
-* Split a string using the given delimiter: `std::vector<std::string> split(const std::string &str, const char &delimiter)`
+* Remove leading whitespace characters: `std::string retVal = stringtoolbox::ltrim(myString);`
+* Remove trailing whitespace characters: `std::string retVal = stringtoolbox::rtrim(myString);`
+* Remove leading and trailing whitespace characters: `std::string retVal = stringtoolbox::trim(myString);`
+* Replace all occurrences of character FROM with TO: `std::string retVal = stringtoolbox::replaceAll(myString, 'X', 'Y');`
+* Split a string using the given delimiter: `std::vector<std::string> retVal = split(myString, ',');`
 
 
 ## Dependencies
