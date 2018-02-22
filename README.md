@@ -20,7 +20,7 @@ stringtoolbox is available as single-file, header-only library - just drop [stri
 * Remove leading whitespace characters: `std::string retVal = stringtoolbox::ltrim(myString);`
 * Remove trailing whitespace characters: `std::string retVal = stringtoolbox::rtrim(myString);`
 * Remove leading and trailing whitespace characters: `std::string retVal = stringtoolbox::trim(myString);`
-* Replace all occurrences of character FROM with TO: `std::string retVal = stringtoolbox::replaceAll(myString, 'X', 'Y');`
+* Replace all occurrences of given character: `std::string retVal = stringtoolbox::replaceAll(myString, 'X', 'Y');`
 * Split a string using the given delimiter: `std::vector<std::string> retVal = split(myString, ',');`
 
 
@@ -33,6 +33,11 @@ No dependencies! All you need is a C++11-compliant compiler (we are testing with
 ## Installation
 ### Installation as single-file, header-only library
 stringtoolbox is provided as header-only, single-file library as well - just drop [stringtoolbox.hpp](https://raw.githubusercontent.com/chrberger/stringtoolbox/master/stringtoolbox.hpp) into your project, `#include "stringtoolbox.hpp"`, and compile your project with a modern C++ compiler (C++11 or newer)
+
+
+## Projects using stringtoolbox
+If your project is using stringtoolbox, just let us know :-)
+* [libcluon](https://github.com/chrberger/libcluon)
 
 
 ## Contributing
