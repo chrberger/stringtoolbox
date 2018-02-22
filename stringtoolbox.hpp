@@ -35,53 +35,55 @@ namespace stringtoolbox {
  * @return std::string without trailing whitespace characters.
  */
 inline std::string &rtrim(std::string &str) noexcept {
-    str.erase(str.find_last_not_of(" \t") + 1);
-    return str;
+  str.erase(str.find_last_not_of(" \t") + 1);
+  return str;
 }
 
 /**
  * @return std::tring without leading whitespace characters.
  */
 inline std::string &ltrim(std::string &str) noexcept {
-    str.erase(0, str.find_first_not_of(" \t"));
-    return str;
+  str.erase(0, str.find_first_not_of(" \t"));
+  return str;
 }
 
 /**
  * @return std:string without leading and trailing whitespace characters.
  */
 inline std::string &trim(std::string &str) noexcept {
-    return ltrim(rtrim(str));
+  return ltrim(rtrim(str));
 }
 
 /**
  * @return std:string where all occurrences of characters FROM are replaced with TO.
  */
-inline std::string replaceAll(const std::string &str, const char &FROM, const char &TO) noexcept {
-    std::string retVal{str};
-    std::replace(retVal.begin(), retVal.end(), FROM, TO);
-    return retVal;
+inline std::string replaceAll(const std::string &str,
+                              const char &FROM,
+                              const char &TO) noexcept {
+  std::string retVal{str};
+  std::replace(retVal.begin(), retVal.end(), FROM, TO);
+  return retVal;
 }
 
 /**
  * @return std::vector<std:string> where the given string is split along delimiter.
  */
-std::vector<std::string> split(const std::string &str, const char &delimiter) noexcept {
-    std::vector<std::string> retVal{};
-    std::string::size_type prev{0};
-    for (std::string::size_type i{str.find_first_of(delimiter, prev)};
-         i != std::string::npos;
-         prev = i+1, i = str.find_first_of(delimiter, prev)) {
-        if (i != prev) {
-            retVal.emplace_back(str.substr(prev, i - prev));
-        }
+std::vector<std::string> split(const std::string &str,
+                               const char &delimiter) noexcept {
+  std::vector<std::string> retVal{};
+  std::string::size_type prev{0};
+  for (std::string::size_type i{str.find_first_of(delimiter, prev)};
+       i != std::string::npos;
+       prev = i + 1, i = str.find_first_of(delimiter, prev)) {
+    if (i != prev) {
+      retVal.emplace_back(str.substr(prev, i - prev));
     }
-    if ((prev > 0) && (prev < str.size())) {
-        retVal.emplace_back(str.substr(prev, str.size() - prev));
-    }
-    return retVal;
+  }
+  if ((prev > 0) && (prev < str.size())) {
+    retVal.emplace_back(str.substr(prev, str.size() - prev));
+  }
+  return retVal;
 }
-
 
 } // namespace stringtoolbox
 
