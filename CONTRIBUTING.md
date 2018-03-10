@@ -1,7 +1,7 @@
-How to contribute to the development of libcluon
-================================================
+How to contribute to the development of stringtoolbox
+=====================================================
 
-Thank you for taking a moment to contribute to read these continuously evolving instructions how to contribute to libcluon.
+Thank you for taking a moment to read these continuously evolving instructions how to contribute to stringtoolbox.
 To maintain a high quality of our code base, we are very strict in terms of reviewing and accepting pull requests (PR).
 
 ## Getting Started
@@ -11,7 +11,7 @@ To maintain a high quality of our code base, we are very strict in terms of revi
 
 ## Making Changes
 - Create a named branch where you want to base your work.
-    - We are using the YYYYQN.Z.topic scheme with small letters, where YYYY is the year, QN is the current quarter, Z is one of `feature` or `fix`, and Z is the topic. Example: 2017Q4.feature.awesome-feature. This scheme allows us to quickly list and sort branches.
+    - We are using the YYYYQN.Z.topic scheme with small letters, where YYYY is the year, N is the current quarter, Z is one of `feature` or `fix`, and Z is the topic. Example: 2017Q4.feature.awesome-feature. This scheme allows us to quickly list and sort branches.
     - Make sure that your topic branched off from master.
 - Make changes and commits.
 
