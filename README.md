@@ -21,7 +21,7 @@ stringtoolbox is available as single-file, header-only library - just drop [stri
 * Remove trailing whitespace characters: `std::string retVal = stringtoolbox::rtrim("Hello World!    ");`
 * Remove leading and trailing whitespace characters: `std::string retVal = stringtoolbox::trim("   Hello World!    ");`
 * Replace all occurrences of given character: `std::string retVal = stringtoolbox::replaceAll("Hello World.", '.', '!');`
-* Split a string using the given delimiter: `std::vector<std::string> retVal = split("Hello,World", ',');`
+* Split a string using the given delimiter: `std::vector<std::string> retVal = stringtoolbox::split("Hello,World", ',');`
 
 
 ## Dependencies
