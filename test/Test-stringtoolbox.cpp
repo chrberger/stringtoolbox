@@ -115,19 +115,36 @@ TEST_CASE("Test split") {
 
     std::string s3 = ";abc;def";
     std::vector<std::string> vs3 = stringtoolbox::split(s3, ';');
-    REQUIRE(vs3.size() == 2);
-    REQUIRE(vs3.at(0) == "abc");
-    REQUIRE(vs3.at(1) == "def");
+    REQUIRE(vs3.size() == 3);
+    REQUIRE(vs3.at(1) == "abc");
+    REQUIRE(vs3.at(2) == "def");
 
     std::string s4 = "abc;def;";
     std::vector<std::string> vs4 = stringtoolbox::split(s4, ';');
-    REQUIRE(vs4.size() == 2);
+    REQUIRE(vs4.size() == 3);
     REQUIRE(vs4.at(0) == "abc");
     REQUIRE(vs4.at(1) == "def");
 
     std::string s5 = ";abc;def;";
     std::vector<std::string> vs5 = stringtoolbox::split(s5, ';');
-    REQUIRE(vs5.size() == 2);
-    REQUIRE(vs5.at(0) == "abc");
-    REQUIRE(vs5.at(1) == "def");
+    REQUIRE(vs5.size() == 4);
+    REQUIRE(vs5.at(1) == "abc");
+    REQUIRE(vs5.at(2) == "def");
+
+    std::string s6 = ";abc;;def;";
+    std::vector<std::string> vs6 = stringtoolbox::split(s6, ';');
+    REQUIRE(vs6.size() == 5);
+    REQUIRE(vs6.at(1) == "abc");
+    REQUIRE(vs6.at(3) == "def");
+}
+
+TEST_CASE("Empty field") {
+    std::string s1 = "1;0;;57.71941;11.95701";
+    std::vector<std::string> vs1 = stringtoolbox::split(s1, ';');
+    REQUIRE(vs1.size() == 5);
+    REQUIRE(vs1.at(0) == "1");
+    REQUIRE(vs1.at(1) == "0");
+    REQUIRE(vs1.at(2) == "");
+    REQUIRE(vs1.at(3) == "57.71941");
+    REQUIRE(vs1.at(4) == "11.95701");
 }
