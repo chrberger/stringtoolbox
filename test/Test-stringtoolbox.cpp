@@ -103,11 +103,11 @@ TEST_CASE("Test replace all") {
 TEST_CASE("Test split") {
     std::string s1 = "abc";
     std::vector<std::string> vs1 = stringtoolbox::split(s1, ',');
-    REQUIRE(vs1.size() == 0);
+    REQUIRE(vs1.size() == 1);
 
     std::string s2 = "abc;def";
     std::vector<std::string> vs2_no = stringtoolbox::split(s2, ',');
-    REQUIRE(vs2_no.size() == 0);
+    REQUIRE(vs2_no.size() == 1);
     std::vector<std::string> vs2 = stringtoolbox::split(s2, ';');
     REQUIRE(vs2.size() == 2);
     REQUIRE(vs2.at(0) == "abc");
