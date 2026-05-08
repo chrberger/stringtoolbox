@@ -75,7 +75,7 @@ inline std::string replaceAll(const std::string &str,
  * @return std::vector<std:string> where the given string is split along delimiter.
  */
 inline std::vector<std::string> split(const std::string &str,
-                               const char &delimiter) noexcept {
+                                const char &delimiter) noexcept {
   std::vector<std::string> retVal{};
   std::string::size_type prev{0};
   for (std::string::size_type i{str.find_first_of(delimiter, prev)};
@@ -94,6 +94,26 @@ inline std::vector<std::string> split(const std::string &str,
   else if (prev > 0) {
     retVal.emplace_back("");
   }
+  return retVal;
+}
+
+/**
+ * @return std::string where all vector entries are concatenated with delimiter.
+ */
+inline std::string join(const std::vector<std::string> &parts,
+                        const char &delimiter) noexcept {
+  std::string retVal{};
+  if (parts.empty()) {
+    return retVal;
+  }
+
+  for (std::size_t i{0}; i < parts.size(); ++i) {
+    if (i > 0) {
+      retVal += delimiter;
+    }
+    retVal += parts.at(i);
+  }
+
   return retVal;
 }
 

@@ -150,3 +150,20 @@ TEST_CASE("Empty field") {
     REQUIRE(vs1.at(3) == "57.71941");
     REQUIRE(vs1.at(4) == "11.95701");
 }
+
+TEST_CASE("Test join") {
+    std::vector<std::string> v1{};
+    REQUIRE(stringtoolbox::join(v1, ';').empty());
+
+    std::vector<std::string> v2{"abc"};
+    REQUIRE(stringtoolbox::join(v2, ';') == "abc");
+
+    std::vector<std::string> v3{"abc", "def"};
+    REQUIRE(stringtoolbox::join(v3, ';') == "abc;def");
+
+    std::vector<std::string> v4{"", "abc", "", "def", ""};
+    REQUIRE(stringtoolbox::join(v4, ';') == ";abc;;def;");
+
+    std::vector<std::string> v5{"a b", "c d"};
+    REQUIRE(stringtoolbox::join(v5, ',') == "a b,c d");
+}
