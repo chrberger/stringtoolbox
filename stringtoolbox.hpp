@@ -35,7 +35,13 @@ namespace stringtoolbox {
  * @return std::string without trailing whitespace characters.
  */
 inline std::string &rtrim(std::string &str) noexcept {
-  str.erase(str.find_last_not_of(" \t") + 1);
+  const std::string::size_type lastNonWhitespace{str.find_last_not_of(" \t")};
+  if (lastNonWhitespace == std::string::npos) {
+    str.clear();
+  }
+  else {
+    str.erase(lastNonWhitespace + 1);
+  }
   return str;
 }
 
