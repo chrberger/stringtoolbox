@@ -59,6 +59,7 @@ TEST_CASE("Test rtrim.") {
     std::string test7r{" A BC"};
     std::string test8r{"A BC "};
     std::string test9r{" A BC "};
+    std::string test10r{" \t\t  "};
 
     REQUIRE(3 == stringtoolbox::rtrim(test1r).size());
     REQUIRE(4 == stringtoolbox::rtrim(test2r).size());
@@ -69,6 +70,7 @@ TEST_CASE("Test rtrim.") {
     REQUIRE(5 == stringtoolbox::rtrim(test7r).size());
     REQUIRE(4 == stringtoolbox::rtrim(test8r).size());
     REQUIRE(5 == stringtoolbox::rtrim(test9r).size());
+    REQUIRE(stringtoolbox::rtrim(test10r).empty());
 }
 
 TEST_CASE("Test trim.") {
